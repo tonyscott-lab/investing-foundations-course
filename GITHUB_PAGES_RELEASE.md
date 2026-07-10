@@ -21,6 +21,9 @@ The course is a static website. It needs no paid server, runtime API, database, 
 - Lesson 1 opens and its **Listen to this section** button speaks.
 - Lesson 2, section 4 plays the optional studio narration.
 - Key words are visible in every section.
+- Finishing a lesson opens its reading cooldown before the assessment.
+- The Reading Room shows ten searchable guides and four lesson-day reading labs.
+- A book guide displays its title, author, synopsis, principles, limitations, narration control, and publisher link.
 - An assessment shows one large question at a time.
 - Refreshing the page keeps progress.
 - Airplane mode still opens previously visited pages after the first online visit.
@@ -28,4 +31,4 @@ The course is a static website. It needs no paid server, runtime API, database, 
 
 ## Updating later
 
-Upload the changed files and commit them. The app uses versioned assets and a service worker; this release is version `v21`. For a later release, increase the version in `index.html` and `service-worker.js` so phones do not keep an older cached copy.
+Upload the changed files and commit them. The app uses versioned assets and a service worker; this release is version `v23`. For a later release, increase the version in `index.html` and `service-worker.js` so phones do not keep an older cached copy.

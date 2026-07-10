@@ -1,6 +1,6 @@
 # Tester release verification
 
-Verified July 10, 2026 against release `v21`.
+Verified July 10, 2026 against release `v23`.
 
 ## Automated content checks — passed
 
@@ -14,6 +14,12 @@ Verified July 10, 2026 against release `v21`.
 - Every question has exactly one correct answer and feedback for all choices
 - Correct answers appear in all three choice positions
 - Full lesson data is included in the offline cache
+- Exactly ten substantial original book guides load with unique routes
+- Every guide includes title, author, central argument, four-part overview, five principles, strengths, limitations, reader fit, reflection, and authorized source link
+- Four non-book lesson days receive structured reading labs
+- Every lesson flows through a cooldown before its assessment
+- The Reading Room is included in the offline cache
+- No local PDF, training-folder path, copied chapter, or unofficial download link is exposed
 - No family access/install instructions appear inside the learning app
 - No API key is stored in the project
 
@@ -30,6 +36,9 @@ Verified July 10, 2026 against release `v21`.
 - Assessment selection and feedback survived a reload
 - Browser console returned no warnings or errors
 - Text remains usable with built-in size controls
+- Reading Room search filters by title, author, category, and idea
+- Book-guide narration uses the same free device voice controls as the course
+- Cooldowns were verified for both featured-book and reading-lab lesson days
 
 ## Voice checks
 
