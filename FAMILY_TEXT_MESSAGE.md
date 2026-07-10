@@ -1,16 +1,16 @@
 # Text this to your family
 
-Replace `YOUR-LINK-HERE` with the GitHub Pages address after publishing.
+Public course: https://tonyscott-lab.github.io/investing-foundations-course/
 
 ## Short version
 
-> I made you a free beginner investing course to test. Open this link in Safari or Chrome: YOUR-LINK-HERE
+> I made you a free beginner investing course to test. Open this link in Safari or Chrome: https://tonyscott-lab.github.io/investing-foundations-course/
 >
 > It has 14 short lessons, optional voice, examples, key words, and assessments. You do not need an account and it will not ask you to invest money. Your progress stays on your phone.
 
 ## Version with phone setup instructions
 
-> I made you a free beginner investing course to test: YOUR-LINK-HERE
+> I made you a free beginner investing course to test: https://tonyscott-lab.github.io/investing-foundations-course/
 >
 > Open the link in Safari on iPhone or Chrome on Android. No account, payment, or brokerage account is needed. Your progress stays only on your phone.
 >
@@ -28,4 +28,3 @@ Replace `YOUR-LINK-HERE` with the GitHub Pages address after publishing.
 - Clearing site/browser data can erase progress.
 - The course is education, not individualized financial, legal, or tax advice.
 - No installation is required. Adding the icon is optional.
-

@@ -2,6 +2,8 @@
 
 A mobile-first, installable, offline-capable introductory course for adult beginners.
 
+**Live course:** https://tonyscott-lab.github.io/investing-foundations-course/
+
 ## Included
 
 - 14 complete lessons, each designed for about 20–30 minutes
