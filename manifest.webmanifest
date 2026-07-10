@@ -1,0 +1,14 @@
+{
+  "name": "Investing Foundations",
+  "short_name": "Foundations",
+  "description": "A story-led mastery journey through investing foundations.",
+  "start_url": "./index.html#welcome",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e7",
+  "theme_color": "#123c46",
+  "icons": [
+    {"src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
