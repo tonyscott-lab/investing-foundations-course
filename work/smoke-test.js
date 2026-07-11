@@ -24,11 +24,11 @@ ok(lessons.every(x=>x.sections.every(s=>s.outcome&&s.keyIdea&&s.workedExample?.b
 ok(lessons.every(x=>x.quiz.length>=5),"every lesson ends with a readable assessment of at least five questions");
 ok(lessons.every(x=>x.quiz.every(q=>q.options.length===3&&q.options.filter(o=>o.correct).length===1&&q.options.every(o=>o.feedback))),"every assessment question has one correct answer and feedback for all choices");
 ok(new Set(lessons.flatMap(x=>x.quiz.map(q=>q.options.findIndex(o=>o.correct)))).size===3,"correct answers use all three positions");
-ok(index.includes("content/lessons.js?v=26")&&index.includes("content/reading-room.js?v=26")&&index.includes("assets/js/app.js?v=26"),"release data, reading room, and app scripts are cache-busted");
+ok(index.includes("content/lessons.js?v=27")&&index.includes("content/reading-room.js?v=27")&&index.includes("assets/js/app.js?v=27"),"release data, reading room, and app scripts are cache-busted");
 ok(!index.includes("#access")&&!app.includes("renderAccess"),"phone installation instructions are not inside the learning app");
 ok(app.includes("SpeechSynthesisUtterance")&&app.includes("Listen to this section")&&app.includes("voice-select")&&app.includes("voice-rate"),"every section supports selectable free built-in narration");
 ok(index.includes("shares-intro.wav")===false&&fs.existsSync(path.join(root,"audio/shares-intro.wav")),"polished narration is a static local asset");
-ok(sw.includes("investing-foundations-v26")&&sw.includes("content/lessons.js?v=26")&&sw.includes("content/reading-room.js?v=26"),"offline cache includes the complete course and reading room");
+ok(sw.includes("investing-foundations-v27")&&sw.includes("content/lessons.js?v=27")&&sw.includes("content/reading-room.js?v=27"),"offline cache includes the complete course and reading room");
 ok(fs.existsSync(path.join(root,"FAMILY_TEXT_MESSAGE.md"))&&fs.existsSync(path.join(root,"GITHUB_PAGES_RELEASE.md")),"family handoff and GitHub Pages instructions are separate from the app");
 ok(reading.books.length===10,"Reading Room contains exactly ten substantial book guides");
 ok(new Set(reading.books.map(book=>book.slug)).size===10,"every reading guide has a unique route");
@@ -41,4 +41,6 @@ ok(!app.includes("training material")&&!app.includes(".pdf"),"the public app doe
 const lessonTerms=[...new Set(lessons.flatMap(l=>l.sections.flatMap(s=>(s.definitions||[]).map(item=>(typeof item==="string"?item:item.term).toLowerCase()))))];
 ok(glossary.length>=50&&lessonTerms.every(term=>simpleGlossary[term]),"every glossary term has a curated everyday-language explanation");
 ok(app.includes("Explain it simply")&&app.includes("<details class=\"glossary-simple\""),"glossary preserves formal definitions and adds accessible expandable explanations");
+ok(index.includes("Family v1.2")&&index.includes('name="version" content="1.2"'),"Family Edition v1.2 is visibly and structurally identified");
+ok(app.includes("By, ${escapeHTML(book.author)}")&&!app.includes("By ${escapeHTML(book.author)}"),"book credits consistently use title followed by By, author");
 process.exitCode = failures ? 1 : 0;

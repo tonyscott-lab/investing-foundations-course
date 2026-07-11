@@ -1,6 +1,6 @@
 # Tester release verification
 
-Verified July 10, 2026 against release `v26`.
+Verified July 10, 2026 against product version `Family Edition v1.2` and technical release `v27`.
 
 ## Automated content checks — passed
 
@@ -11,6 +11,8 @@ Verified July 10, 2026 against release `v26`.
 - Every section has at least one visible key word with a definition
 - Every glossary term has both a formal definition and a curated everyday-language explanation
 - Plain-language explanations use native, keyboard-accessible expandable controls
+- Family Edition v1.2 appears in the persistent top navigation
+- Every Reading Room book credit uses the title followed by “By, Author”
 - Every section has an outcome, key idea, worked example, and summary
 - Every lesson has a five-question or longer assessment
 - Every question has exactly one correct answer and feedback for all choices

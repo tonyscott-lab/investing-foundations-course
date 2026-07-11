@@ -2,6 +2,8 @@
 
 A mobile-first, installable, offline-capable introductory course for adult beginners.
 
+**Family Edition:** v1.2
+
 **Live course:** https://tonyscott-lab.github.io/investing-foundations-course/
 
 ## Included

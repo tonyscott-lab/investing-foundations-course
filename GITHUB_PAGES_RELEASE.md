@@ -31,4 +31,4 @@ The course is a static website. It needs no paid server, runtime API, database, 
 
 ## Updating later
 
-Upload the changed files and commit them. The app uses versioned assets and a service worker; this release is version `v26`. For a later release, increase the version in `index.html` and `service-worker.js` so phones do not keep an older cached copy.
+Upload the changed files and commit them. The learner-facing product is **Family Edition v1.2**. Its internal cache release is `v27`; for a later release, increase the cache version in `index.html` and `service-worker.js` so phones do not keep an older copy.

@@ -1,7 +1,7 @@
 {
   "name": "Investing Foundations",
   "short_name": "Foundations",
-  "description": "A story-led mastery journey through investing foundations.",
+  "description": "Family Edition v1.2: a story-led mastery journey through investing foundations.",
   "start_url": "./index.html#welcome",
   "scope": "./",
   "display": "standalone",

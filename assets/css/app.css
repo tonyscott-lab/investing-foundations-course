@@ -61,6 +61,7 @@ main:focus { outline: none; }
 .brand strong, .brand small { display: block; }
 .brand strong { font-family: Georgia, Cambria, serif; font-size: 1.06rem; }
 .brand small { color: var(--muted); font-size: .74rem; margin-top: .2rem; letter-spacing: .08em; text-transform: uppercase; }
+.release-version { flex:none; padding:.28rem .5rem; border:1px solid #c9b27e; border-radius:999px; color:#6b4b19; background:var(--gold-soft); font-size:.7rem; font-weight:850; letter-spacing:.02em; white-space:nowrap; }
 .brand-mark { width: 44px; height: 44px; border-radius: 14px; background: var(--lake); display: flex; align-items: flex-end; gap: 4px; padding: 10px; }
 .brand-mark span { display: block; flex: 1; background: var(--gold); border-radius: 3px 3px 1px 1px; }
 .brand-mark span:nth-child(1) { height: 35%; }
@@ -434,6 +435,7 @@ dialog form { padding: 1.5rem; }
 @media (max-width: 600px) {
   .site-header { align-items: flex-start; }
   .brand small { display: none; }
+  .release-version { padding:.25rem .42rem; font-size:.65rem; }
   .utility-nav > a { display: none; }
   .more-menu .mobile-menu-glossary { display: block !important; }
   .text-size span { display: none; }
