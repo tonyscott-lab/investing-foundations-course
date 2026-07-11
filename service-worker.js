@@ -1,20 +1,21 @@
-const CACHE_NAME = "investing-foundations-v27";
+const CACHE_NAME = "investing-foundations-v28";
 const CORE_FILES = [
   "./",
   "./index.html",
   "./offline.html",
   "./manifest.webmanifest",
-  "./assets/css/app.css?v=27",
-  "./assets/js/app.js?v=27",
+  "./assets/css/app.css?v=28",
+  "./assets/js/app.js?v=28",
   "./assets/icons/icon.svg",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
-  "./content/course.js?v=27",
-  "./content/lesson-day-2.js?v=27",
-  "./content/quiz-day-2.js?v=27",
-  "./content/glossary.js?v=27",
-  "./content/lessons.js?v=27",
-  "./content/reading-room.js?v=27",
+  "./content/course.js?v=28",
+  "./content/lesson-day-2.js?v=28",
+  "./content/quiz-day-2.js?v=28",
+  "./content/glossary.js?v=28",
+  "./content/lessons.js?v=28",
+  "./content/reading-room.js?v=28",
+  "./content/reading-room-expanded.js?v=28",
   "./audio/shares-intro.wav"
 ];
 

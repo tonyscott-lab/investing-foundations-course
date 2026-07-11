@@ -710,6 +710,8 @@ dialog form { padding: 1.5rem; }
 .reading-reflection { padding:1.2rem 1.4rem; margin:1.2rem 0; border-left:6px solid #d9a94e; background:#fff9e9; border-radius:0 14px 14px 0; }
 .reading-reflection p:last-child { font-size:1.15rem; font-weight:700; line-height:1.55; }
 .book-guide-page { background:#f7f4ec; padding-bottom:4rem; }
+.guide-reading-progress { position:fixed; top:76px; left:0; right:0; z-index:49; height:4px; background:rgba(255,255,255,.25); pointer-events:none; }
+.guide-reading-progress span { display:block; width:0; height:100%; background:linear-gradient(90deg,#e4b45d,#cf6a48); transition:width .1s linear; }
 .book-guide-hero { padding:clamp(2.5rem,7vw,5rem) 0; background:linear-gradient(125deg,#102f39,#1d494d); color:white; }
 .book-guide-hero-grid { display:grid; grid-template-columns:1fr 240px; gap:3rem; align-items:center; }
 .book-guide-hero .breadcrumbs, .book-guide-hero .breadcrumbs a { color:#dcebe7; }
@@ -719,14 +721,38 @@ dialog form { padding: 1.5rem; }
 .guide-cover { min-height:340px; transform:rotate(2deg); }
 .guide-cover strong { font-size:2rem; }
 .book-guide-body { margin-top:-1.5rem; position:relative; }
-.guide-big-idea, .guide-overview, .guide-principles, .guide-evaluation section, .guide-reader-fit, .guide-buy { margin:1.4rem 0; padding:clamp(1.3rem,4vw,2rem); background:#fff; border:1px solid #ddd8cc; border-radius:20px; }
+.guide-roadmap { position:sticky; top:88px; z-index:20; display:flex; align-items:center; gap:.45rem; margin:0 0 1.25rem; padding:.55rem; overflow-x:auto; border:1px solid #cfcbc0; border-radius:14px; background:rgba(255,253,248,.96); box-shadow:0 10px 25px rgba(20,45,50,.1); backdrop-filter:blur(10px); }
+.guide-roadmap span { flex:none; padding:0 .55rem; color:#7c4e28; font-size:.75rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.guide-roadmap button { flex:none; min-height:42px; padding:.55rem .75rem; border:0; border-radius:9px; color:#173f49; background:#edf3f1; font-weight:800; cursor:pointer; }
+.guide-roadmap button:hover { background:#faedcf; }
+.guide-big-idea, .guide-overview, .guide-map-section, .guide-deeper, .guide-principles, .guide-application, .guide-evaluation section, .guide-reader-fit, .guide-source { margin:1.4rem 0; padding:clamp(1.3rem,4vw,2rem); background:#fff; border:1px solid #ddd8cc; border-radius:20px; }
+.guide-overview, .guide-map-section, .guide-deeper, .guide-application, .guide-source { scroll-margin-top:150px; }
 .guide-big-idea { border-left:8px solid var(--book-accent); }
 .guide-big-idea p:last-child { margin:0; font-family:Georgia,serif; font-size:clamp(1.25rem,3vw,1.65rem); line-height:1.55; }
 .guide-overview > p:not(.course-label) { font-size:1.07rem; line-height:1.78; }
+.guide-section-intro { color:#5c6d70; }
+.guide-insight-map { position:relative; display:grid; gap:1.2rem; margin-top:1.5rem; padding:1.25rem; border-radius:18px; background:linear-gradient(145deg,#eef4f1,#f8efe0); overflow:hidden; }
+.guide-insight-map::before { content:""; position:absolute; width:220px; height:220px; right:-100px; top:-110px; border:1px solid rgba(24,61,69,.14); border-radius:50%; box-shadow:0 0 0 30px rgba(24,61,69,.035),0 0 0 60px rgba(24,61,69,.02); }
+.map-core { position:relative; z-index:1; padding:1.25rem; border-left:7px solid #e1b35e; border-radius:14px; color:white; background:#173f49; }
+.map-core small { color:#f5d9a1; font-weight:900; letter-spacing:.1em; }
+.map-core p { margin:.35rem 0 0; font-family:Georgia,serif; font-size:1.25rem; line-height:1.55; }
+.map-branches { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
+.map-branches article { position:relative; padding:1rem; border:1px solid #cad8d4; border-radius:14px; background:white; }
+.map-branches article::before { content:""; position:absolute; width:1px; height:1.2rem; left:50%; top:-1.2rem; background:#8da8a2; }
+.map-branches span { color:#b05b40; font-weight:900; }
+.map-branches h3 { margin:.35rem 0; font-size:1.1rem; }
+.map-branches p { margin:0; color:#52676b; font-size:.92rem; line-height:1.55; }
+.guide-deeper > p:not(.course-label) { font-size:1.07rem; line-height:1.82; }
+.guide-deeper h2 + p::first-letter { float:left; padding:.05em .1em 0 0; color:var(--book-accent); font-family:Georgia,serif; font-size:3.6rem; line-height:.8; }
 .guide-principles article { display:grid; grid-template-columns:3rem 1fr; gap:1rem; padding:1.1rem 0; border-top:1px solid #e2ded4; }
 .guide-principles article > span { display:grid; place-items:center; width:2.7rem; height:2.7rem; border-radius:50%; background:var(--book-accent); color:white; font-weight:900; }
 .guide-principles h3 { margin:0 0 .25rem; color:#153c44; }
 .guide-principles article p { margin:0; line-height:1.6; }
+.guide-application > div { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
+.guide-application article { padding:1rem; border-radius:14px; color:white; background:linear-gradient(145deg,#1a424a,#285e61); }
+.guide-application article > span { color:#f2c879; font-size:.78rem; font-weight:900; letter-spacing:.1em; }
+.guide-application h3 { margin:.35rem 0; color:white; font-size:1.2rem; }
+.guide-application article p { margin:0; color:#e3eeeb; line-height:1.6; }
 .guide-evaluation { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 .guide-evaluation section:first-child { border-top:6px solid #4f8b67; }
 .guide-evaluation section:last-child { border-top:6px solid #d39a42; }
@@ -734,10 +760,13 @@ dialog form { padding: 1.5rem; }
 .guide-reader-fit { display:grid; grid-template-columns:1fr .8fr; gap:1.5rem; align-items:center; }
 .guide-reader-fit aside { padding:1.2rem; background:#eef4f2; border-radius:14px; }
 .guide-reader-fit aside p:last-child { font-weight:700; line-height:1.6; }
-.guide-buy { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; background:#183940; color:white; }
-.guide-buy h2 { color:white; }
-.guide-buy p { color:#dfebe8; }
-.guide-buy .button { flex:0 0 auto; }
+.guide-questions { margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid #dfd9cd; }
+.guide-questions h3 { font-size:1.15rem; }
+.guide-questions li { margin:.55rem 0; line-height:1.55; }
+.guide-source { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; background:#183940; color:white; }
+.guide-source h2 { color:white; }
+.guide-source p { color:#dfebe8; }
+.guide-source .button { flex:0 0 auto; }
 .guide-nav { display:flex; justify-content:space-between; gap:1rem; padding:1rem 0; font-weight:800; }
 @media (max-width:780px) {
   .reading-room-note, .book-card, .cooldown-book, .book-guide-hero-grid, .guide-reader-fit { grid-template-columns:1fr; }
@@ -745,8 +774,9 @@ dialog form { padding: 1.5rem; }
   .book-card-cover { min-height:210px; }
   .book-card { min-height:0; }
   .guide-cover { display:none; }
-  .reading-room-footer > div, .guide-evaluation { grid-template-columns:1fr; }
-  .reading-promo, .guide-buy { align-items:flex-start; flex-direction:column; }
+  .reading-room-footer > div, .guide-evaluation, .map-branches, .guide-application > div { grid-template-columns:1fr; }
+  .reading-promo, .guide-source { align-items:flex-start; flex-direction:column; }
+  .map-branches article::before { display:none; }
   .cooldown-orbit { opacity:.45; }
   .guide-nav { flex-direction:column; }
 }

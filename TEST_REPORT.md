@@ -1,6 +1,6 @@
 # Tester release verification
 
-Verified July 10, 2026 against product version `Family Edition v1.2` and technical release `v27`.
+Verified July 10, 2026 against product version `Family Edition v1.3` and technical release `v28`.
 
 ## Automated content checks — passed
 
@@ -11,15 +11,18 @@ Verified July 10, 2026 against product version `Family Edition v1.2` and technic
 - Every section has at least one visible key word with a definition
 - Every glossary term has both a formal definition and a curated everyday-language explanation
 - Plain-language explanations use native, keyboard-accessible expandable controls
-- Family Edition v1.2 appears in the persistent top navigation
+- Family Edition v1.3 appears in the persistent top navigation
 - Every Reading Room book credit uses the title followed by “By, Author”
 - Every section has an outcome, key idea, worked example, and summary
 - Every lesson has a five-question or longer assessment
 - Every question has exactly one correct answer and feedback for all choices
 - Correct answers appear in all three choice positions
 - Full lesson data is included in the offline cache
-- Exactly ten substantial original book guides load with unique routes
-- Every guide includes title, author, central argument, four-part overview, five principles, strengths, limitations, reader fit, reflection, and authorized source link
+- Exactly ten original book guides of at least 1,100 words load with unique routes
+- Every guide includes title, author, central argument, four-part overview, at least seven deeper-reading sections, five principles, three applications, three continuation questions, strengths, limitations, reader fit, reflection, and an official publisher-information link
+- Every guide is labeled as a seven-minute original guide and is included in the offline cache
+- Every guide includes a course-made concept map, section roadmap, and reading-progress indicator
+- No guide uses “buy” framing, Amazon prioritization, or affiliate language
 - Four non-book lesson days receive structured reading labs
 - Every lesson flows through a cooldown before its assessment
 - The Reading Room is included in the offline cache
@@ -44,6 +47,12 @@ Verified July 10, 2026 against product version `Family Edition v1.2` and technic
 - Searching checks the term, formal definition, and everyday-language explanation without interrupting typing
 - Phone glossary controls measured at least 53px high with no horizontal overflow
 - Reading Room search filters by title, author, category, and idea
+- Reading Room reports 10 seven-minute guides and approximately 70 minutes of original reading
+- Desktop concept map displays one central thesis and three connected idea branches
+- Phone guide roadmap scrolls horizontally without creating page overflow
+- Roadmap buttons move to synopsis, concept map, deeper context, applications, and full-book sections
+- Reading progress updates while moving through the guide
+- Full-book section contains no Amazon reference, sales prompt, affiliate relationship, PDF, or unofficial download
 - Book-guide narration uses the same free device voice controls as the course
 - Cooldowns were verified for both featured-book and reading-lab lesson days
 
