@@ -23,7 +23,7 @@ The course is a static website. It needs no paid server, runtime API, database, 
 - Key words are visible in every section.
 - Finishing a lesson opens its reading cooldown before the assessment.
 - The Reading Room shows ten searchable seven-minute guides and four lesson-day reading labs.
-- A book guide displays its title, author, extended synopsis, original concept map, principles, applications, limitations, narration control, reading progress, and neutral publisher-information link.
+- A book guide displays its title, author, extended synopsis, original concept map, principles, applications, limitations, narration control, reading progress, and a “continue with your copy” ending without an external book link.
 - An assessment shows one large question at a time.
 - Refreshing the page keeps progress.
 - Airplane mode still opens previously visited pages after the first online visit.
@@ -31,4 +31,4 @@ The course is a static website. It needs no paid server, runtime API, database, 
 
 ## Updating later
 
-Upload the changed files and commit them. The learner-facing product is **Family Edition v1.3**. Its internal cache release is `v28`; for a later release, increase the cache version in `index.html` and `service-worker.js` so phones do not keep an older copy.
+Upload the changed files and commit them. The learner-facing product is **Family Edition v1.3**. Its internal cache release is `v29`; for a later release, increase the cache version in `index.html` and `service-worker.js` so phones do not keep an older copy.

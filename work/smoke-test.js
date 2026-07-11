@@ -24,15 +24,15 @@ ok(lessons.every(x=>x.sections.every(s=>s.outcome&&s.keyIdea&&s.workedExample?.b
 ok(lessons.every(x=>x.quiz.length>=5),"every lesson ends with a readable assessment of at least five questions");
 ok(lessons.every(x=>x.quiz.every(q=>q.options.length===3&&q.options.filter(o=>o.correct).length===1&&q.options.every(o=>o.feedback))),"every assessment question has one correct answer and feedback for all choices");
 ok(new Set(lessons.flatMap(x=>x.quiz.map(q=>q.options.findIndex(o=>o.correct)))).size===3,"correct answers use all three positions");
-ok(index.includes("content/lessons.js?v=28")&&index.includes("content/reading-room-expanded.js?v=28")&&index.includes("assets/js/app.js?v=28"),"release data, expanded reading room, and app scripts are cache-busted");
+ok(index.includes("content/lessons.js?v=29")&&index.includes("content/reading-room-expanded.js?v=29")&&index.includes("assets/js/app.js?v=29"),"release data, expanded reading room, and app scripts are cache-busted");
 ok(!index.includes("#access")&&!app.includes("renderAccess"),"phone installation instructions are not inside the learning app");
 ok(app.includes("SpeechSynthesisUtterance")&&app.includes("Listen to this section")&&app.includes("voice-select")&&app.includes("voice-rate"),"every section supports selectable free built-in narration");
 ok(index.includes("shares-intro.wav")===false&&fs.existsSync(path.join(root,"audio/shares-intro.wav")),"polished narration is a static local asset");
-ok(sw.includes("investing-foundations-v28")&&sw.includes("content/lessons.js?v=28")&&sw.includes("content/reading-room-expanded.js?v=28"),"offline cache includes the complete course and expanded reading room");
+ok(sw.includes("investing-foundations-v29")&&sw.includes("content/lessons.js?v=29")&&sw.includes("content/reading-room-expanded.js?v=29"),"offline cache includes the complete course and expanded reading room");
 ok(fs.existsSync(path.join(root,"FAMILY_TEXT_MESSAGE.md"))&&fs.existsSync(path.join(root,"GITHUB_PAGES_RELEASE.md")),"family handoff and GitHub Pages instructions are separate from the app");
 ok(reading.books.length===10,"Reading Room contains exactly ten substantial book guides");
 ok(new Set(reading.books.map(book=>book.slug)).size===10,"every reading guide has a unique route");
-ok(reading.books.every(book=>book.title&&book.author&&book.year&&book.sourceUrl&&book.bigIdea),"every guide identifies the book and links to an authorized source");
+ok(reading.books.every(book=>book.title&&book.author&&book.year&&book.sourceUrl&&book.bigIdea),"every guide identifies the book and retains source metadata for internal verification");
 ok(reading.books.every(book=>book.overview.length>=4&&book.principles.length>=5),"every guide has a sizeable synopsis and at least five principles");
 ok(reading.books.every(book=>book.minutes===7&&book.deeperDive?.length>=7&&book.application?.length===3&&book.questions?.length===3),"every book has a complete seven-minute expanded guide structure");
 ok(reading.books.every(book=>[...book.overview,...book.principles.map(p=>p.text),book.bigIdea,book.strengths,book.limitations,book.who,book.reflection,...book.deeperDive,...book.application.flatMap(x=>[x.title,x.text]),...book.questions].join(" ").split(/\s+/).length>=1100),"every guide contains at least 1,100 words of original commentary");
@@ -45,5 +45,5 @@ ok(app.includes("Explain it simply")&&app.includes("<details class=\"glossary-si
 ok(index.includes("Family v1.3")&&index.includes('name="version" content="1.3"'),"Family Edition v1.3 is visibly and structurally identified");
 ok(app.includes("By, ${escapeHTML(book.author)}")&&!app.includes("By ${escapeHTML(book.author)}"),"book credits consistently use title followed by By, author");
 ok(app.includes("ORIGINAL CONCEPT MAP")&&app.includes("guide-reading-progress")&&app.includes("guide-roadmap"),"expanded guides include original visuals, progress, and section navigation");
-ok(!app.includes("Buy, borrow")&&!app.includes("before buying")&&app.includes("no affiliate links"),"Reading Room uses neutral full-book language with no commercial framing");
+ok(!app.includes("Official publisher information")&&!app.includes("Visit official book page")&&!app.includes("Buy, borrow")&&app.includes("Continue with the copy you already have"),"learner-facing guides contain no book sales or external publisher links");
 process.exitCode = failures ? 1 : 0;

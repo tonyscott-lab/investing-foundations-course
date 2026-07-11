@@ -15,7 +15,7 @@ A mobile-first, installable, offline-capable introductory course for adult begin
 - One static Google-generated studio narration at the central share-ownership lesson
 - A lesson-end reading cooldown followed by each assessment
 - The Long View Reading Room with ten honest seven-minute original book guides and four reading labs
-- Search, device narration, critical-reading notes, and authorized publisher links for every guide
+- Search, device narration, critical-reading notes, and a neutral “continue with your copy” ending for every guide
 - Original concept maps, section roadmaps, reading-progress indicators, practical applications, and questions for continuing into the full books
 - A two-level glossary that keeps the formal course definition and adds an expandable everyday-language explanation for every term
 - Local-only progress, text sizing, glossary, disclosures, offline support, and home-screen installation
@@ -42,4 +42,4 @@ The shipped course makes no runtime AI or voice API calls. Section narration use
 
 The course is general education, not individualized financial, legal, or tax advice. It does not recommend an investment, fund, account, broker, or portfolio. Core concepts were checked against official SEC/Investor.gov, FINRA, and CFPB educational material; links appear in the app's Sources screen.
 
-Reading Room entries are original educational commentary, not excerpts or replacements for the books. The project does not include PDFs, copied chapters, cover art, unofficial download links, affiliate links, or sales relationships. Each optional source link goes to the official publisher for identification and authorized-edition information.
+Reading Room entries are original educational commentary, not excerpts or replacements for the books. The learner-facing project does not include PDFs, copied chapters, cover art, unofficial downloads, retailer links, publisher links, purchase prompts, affiliate links, or sales relationships.

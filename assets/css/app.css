@@ -725,8 +725,8 @@ dialog form { padding: 1.5rem; }
 .guide-roadmap span { flex:none; padding:0 .55rem; color:#7c4e28; font-size:.75rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
 .guide-roadmap button { flex:none; min-height:42px; padding:.55rem .75rem; border:0; border-radius:9px; color:#173f49; background:#edf3f1; font-weight:800; cursor:pointer; }
 .guide-roadmap button:hover { background:#faedcf; }
-.guide-big-idea, .guide-overview, .guide-map-section, .guide-deeper, .guide-principles, .guide-application, .guide-evaluation section, .guide-reader-fit, .guide-source { margin:1.4rem 0; padding:clamp(1.3rem,4vw,2rem); background:#fff; border:1px solid #ddd8cc; border-radius:20px; }
-.guide-overview, .guide-map-section, .guide-deeper, .guide-application, .guide-source { scroll-margin-top:150px; }
+.guide-big-idea, .guide-overview, .guide-map-section, .guide-deeper, .guide-principles, .guide-application, .guide-evaluation section, .guide-reader-fit, .guide-continuation { margin:1.4rem 0; padding:clamp(1.3rem,4vw,2rem); background:#fff; border:1px solid #ddd8cc; border-radius:20px; }
+.guide-overview, .guide-map-section, .guide-deeper, .guide-application, .guide-continuation { scroll-margin-top:150px; }
 .guide-big-idea { border-left:8px solid var(--book-accent); }
 .guide-big-idea p:last-child { margin:0; font-family:Georgia,serif; font-size:clamp(1.25rem,3vw,1.65rem); line-height:1.55; }
 .guide-overview > p:not(.course-label) { font-size:1.07rem; line-height:1.78; }
@@ -763,10 +763,11 @@ dialog form { padding: 1.5rem; }
 .guide-questions { margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid #dfd9cd; }
 .guide-questions h3 { font-size:1.15rem; }
 .guide-questions li { margin:.55rem 0; line-height:1.55; }
-.guide-source { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; background:#183940; color:white; }
-.guide-source h2 { color:white; }
-.guide-source p { color:#dfebe8; }
-.guide-source .button { flex:0 0 auto; }
+.guide-continuation { position:relative; overflow:hidden; background:linear-gradient(130deg,#183940,#21545a); color:white; }
+.guide-continuation::after { content:""; position:absolute; width:180px; height:180px; right:-80px; top:-95px; border:1px solid rgba(255,255,255,.2); border-radius:50%; box-shadow:0 0 0 28px rgba(255,255,255,.04),0 0 0 56px rgba(255,255,255,.025); }
+.guide-continuation > div { position:relative; z-index:1; max-width:62ch; }
+.guide-continuation h2 { color:white; }
+.guide-continuation p { color:#dfebe8; }
 .guide-nav { display:flex; justify-content:space-between; gap:1rem; padding:1rem 0; font-weight:800; }
 @media (max-width:780px) {
   .reading-room-note, .book-card, .cooldown-book, .book-guide-hero-grid, .guide-reader-fit { grid-template-columns:1fr; }
@@ -775,7 +776,7 @@ dialog form { padding: 1.5rem; }
   .book-card { min-height:0; }
   .guide-cover { display:none; }
   .reading-room-footer > div, .guide-evaluation, .map-branches, .guide-application > div { grid-template-columns:1fr; }
-  .reading-promo, .guide-source { align-items:flex-start; flex-direction:column; }
+  .reading-promo { align-items:flex-start; flex-direction:column; }
   .map-branches article::before { display:none; }
   .cooldown-orbit { opacity:.45; }
   .guide-nav { flex-direction:column; }

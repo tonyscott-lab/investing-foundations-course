@@ -1,6 +1,6 @@
 # Tester release verification
 
-Verified July 10, 2026 against product version `Family Edition v1.3` and technical release `v28`.
+Verified July 11, 2026 against product version `Family Edition v1.3` and technical release `v29`.
 
 ## Automated content checks — passed
 
@@ -19,7 +19,7 @@ Verified July 10, 2026 against product version `Family Edition v1.3` and technic
 - Correct answers appear in all three choice positions
 - Full lesson data is included in the offline cache
 - Exactly ten original book guides of at least 1,100 words load with unique routes
-- Every guide includes title, author, central argument, four-part overview, at least seven deeper-reading sections, five principles, three applications, three continuation questions, strengths, limitations, reader fit, reflection, and an official publisher-information link
+- Every guide includes title, author, central argument, four-part overview, at least seven deeper-reading sections, five principles, three applications, three continuation questions, strengths, limitations, reader fit, reflection, and a “continue with your copy” ending
 - Every guide is labeled as a seven-minute original guide and is included in the offline cache
 - Every guide includes a course-made concept map, section roadmap, and reading-progress indicator
 - No guide uses “buy” framing, Amazon prioritization, or affiliate language
@@ -52,7 +52,7 @@ Verified July 10, 2026 against product version `Family Edition v1.3` and technic
 - Phone guide roadmap scrolls horizontally without creating page overflow
 - Roadmap buttons move to synopsis, concept map, deeper context, applications, and full-book sections
 - Reading progress updates while moving through the guide
-- Full-book section contains no Amazon reference, sales prompt, affiliate relationship, PDF, or unofficial download
+- Full-book section contains no Amazon reference, retailer link, publisher link, sales prompt, affiliate relationship, PDF, or unofficial download
 - Book-guide narration uses the same free device voice controls as the course
 - Cooldowns were verified for both featured-book and reading-lab lesson days
 
