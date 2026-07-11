@@ -8,6 +8,7 @@
   const lessons = window.IF_LESSONS || [];
   const course = window.IF_COURSE;
   const baseGlossary = window.IF_GLOSSARY || [];
+  const simpleGlossary = window.IF_GLOSSARY_SIMPLE || {};
   const readingRoom = window.IF_READING_ROOM || {books:[],interludes:{}};
 
   const escapeHTML = value => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[c]);
@@ -44,11 +45,13 @@
   function announce(message) { announcer.textContent = ""; setTimeout(() => { announcer.textContent = message; }, 20); }
   function lessonByDay(day) { return lessons.find(item => item.day === Number(day)) || lessons[0]; }
   function glossaryDefinition(term) { return baseGlossary.find(item => item.term.toLowerCase() === String(term).toLowerCase())?.definition || "A course term used in this section."; }
+  function glossarySimple(term, definition) { return simpleGlossary[String(term).toLowerCase()] || definition || "A plain-language explanation is coming soon."; }
   function allGlossary() {
-    const map = new Map(baseGlossary.map(item => [item.term.toLowerCase(), item]));
+    const map = new Map(baseGlossary.map(item => [item.term.toLowerCase(), {...item, simple:glossarySimple(item.term,item.definition)}]));
     lessons.forEach(l => l.sections.forEach(s => (s.definitions || []).forEach(item => {
       const entry = typeof item === "string" ? {term:item, definition:glossaryDefinition(item)} : item;
-      map.set(entry.term.toLowerCase(), entry);
+      const key=entry.term.toLowerCase(), previous=map.get(key);
+      map.set(key, {...previous,...entry,simple:entry.simple||previous?.simple||glossarySimple(entry.term,entry.definition)});
     })));
     return [...map.values()].sort((a,b) => a.term.localeCompare(b.term));
   }
@@ -167,7 +170,7 @@
     document.getElementById("listen-section").addEventListener("click",()=>toggleSpeech(bookSpeechSection(book)));populateVoiceControls();
   }
 
-  function renderGlossary(query="") {const all=allGlossary(),filtered=all.filter(x=>(x.term+" "+x.definition).toLowerCase().includes(query.toLowerCase()));setScreen(`<section class="page"><p class="breadcrumbs"><a href="#dashboard">Course home</a> / Glossary</p><div class="page-header"><p class="eyebrow">PLAIN-LANGUAGE REFERENCE</p><h1>Course glossary</h1><p class="lead">Key words from every lesson, collected in one place.</p></div><label for="term-search"><strong>Find a term</strong></label><input class="term-search" id="term-search" type="search" value="${escapeHTML(query)}" placeholder="Try diversification or bond"><p class="microcopy">${filtered.length} terms</p><div class="glossary-list">${filtered.map(x=>`<article><h2>${escapeHTML(x.term)}</h2><p>${escapeHTML(x.definition)}</p></article>`).join("")}</div></section>`);document.getElementById("term-search").addEventListener("input",e=>renderGlossary(e.target.value));}
+  function renderGlossary(query="") {const all=allGlossary(),initial=query.trim().toLowerCase(),matches=x=>(x.term+" "+x.definition+" "+x.simple).toLowerCase().includes(initial),initialCount=all.filter(matches).length;setScreen(`<section class="page glossary-page"><p class="breadcrumbs"><a href="#dashboard">Course home</a> / Glossary</p><div class="page-header"><p class="eyebrow">TWO WAYS TO UNDERSTAND EVERY TERM</p><h1>Course glossary</h1><p class="lead">Start with the accurate course definition. Then open <strong>Explain it simply</strong> for the same idea in everyday language.</p></div><label for="term-search"><strong>Find a term</strong></label><input class="term-search" id="term-search" type="search" value="${escapeHTML(query)}" placeholder="Try diversification or bond"><p class="microcopy" id="glossary-count">${initialCount} term${initialCount===1?"":"s"}</p><div class="glossary-list">${all.map(x=>{const search=`${x.term} ${x.definition} ${x.simple}`.toLowerCase();return `<article class="glossary-card" data-term="${escapeHTML(x.term.toLowerCase())}" data-search="${escapeHTML(search)}" ${initial&&!search.includes(initial)?"hidden":""}><h2>${escapeHTML(x.term)}</h2><p class="glossary-label">COURSE DEFINITION</p><p class="glossary-formal">${escapeHTML(x.definition)}</p><details class="glossary-simple"><summary>Explain it simply</summary><div><p class="glossary-label">IN EVERYDAY WORDS</p><p>${escapeHTML(x.simple)}</p></div></details></article>`;}).join("")}</div></section>`);document.getElementById("term-search").addEventListener("input",event=>{const q=event.target.value.trim().toLowerCase();let visible=0;document.querySelectorAll(".glossary-card").forEach(card=>{card.hidden=q&&!card.dataset.search.includes(q);if(!card.hidden)visible++;});document.getElementById("glossary-count").textContent=`${visible} term${visible===1?"":"s"}`;});}
   function renderSources(){const sources=[
     ["Introduction to Investing — Investor.gov","https://www.investor.gov/introduction-investing","Goals, saving, investing, compound growth, risk, allocation, and diversification."],
     ["Stocks — Investor.gov","https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks","Ownership, shareholder rights, reasons companies issue stock, and stock risk."],

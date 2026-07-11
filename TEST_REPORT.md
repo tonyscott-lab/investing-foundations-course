@@ -1,6 +1,6 @@
 # Tester release verification
 
-Verified July 10, 2026 against release `v23`.
+Verified July 10, 2026 against release `v26`.
 
 ## Automated content checks — passed
 
@@ -9,6 +9,8 @@ Verified July 10, 2026 against release `v23`.
 - Every lesson has at least three learning objectives
 - Every section has substantive core reading
 - Every section has at least one visible key word with a definition
+- Every glossary term has both a formal definition and a curated everyday-language explanation
+- Plain-language explanations use native, keyboard-accessible expandable controls
 - Every section has an outcome, key idea, worked example, and summary
 - Every lesson has a five-question or longer assessment
 - Every question has exactly one correct answer and feedback for all choices
@@ -36,6 +38,9 @@ Verified July 10, 2026 against release `v23`.
 - Assessment selection and feedback survived a reload
 - Browser console returned no warnings or errors
 - Text remains usable with built-in size controls
+- Glossary displays 186 formal definitions with 186 matching plain-language explanations
+- Searching checks the term, formal definition, and everyday-language explanation without interrupting typing
+- Phone glossary controls measured at least 53px high with no horizontal overflow
 - Reading Room search filters by title, author, category, and idea
 - Book-guide narration uses the same free device voice controls as the course
 - Cooldowns were verified for both featured-book and reading-lab lesson days

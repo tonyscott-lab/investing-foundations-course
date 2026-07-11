@@ -14,6 +14,7 @@ A mobile-first, installable, offline-capable introductory course for adult begin
 - A lesson-end reading cooldown followed by each assessment
 - The Long View Reading Room with ten substantial original book guides and four reading labs
 - Search, device narration, critical-reading notes, and authorized publisher links for every guide
+- A two-level glossary that keeps the formal course definition and adds an expandable everyday-language explanation for every term
 - Local-only progress, text sizing, glossary, disclosures, offline support, and home-screen installation
 
 ## Run locally

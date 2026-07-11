@@ -193,9 +193,19 @@ h3 { margin: 0 0 .55rem; font-size: clamp(1.25rem, 2.2vw, 1.65rem); }
 .concept-card { border-top: 6px solid var(--gold); }
 .term-search { width: 100%; min-height: 52px; margin: 0 0 1.2rem; padding: .75rem 1rem; border: 2px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); }
 .glossary-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
-.glossary-list article { padding: 1rem 1.1rem; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
-.glossary-list h2 { margin: 0 0 .35rem; font-family: inherit; font-size: 1.05rem; }
+.glossary-list article { align-self:start; padding: 1.2rem; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow:0 8px 24px rgba(18,60,70,.05); }
+.glossary-list h2 { margin: 0 0 .65rem; color:#123c46; font-family:Georgia,serif; font-size:1.35rem; text-transform:capitalize; }
 .glossary-list p { margin: 0; color: var(--muted); }
+.glossary-label { margin-bottom:.3rem !important; color:#8e4d39 !important; font-size:.72rem; font-weight:800; letter-spacing:.1em; }
+.glossary-formal { line-height:1.58; }
+.glossary-simple { margin-top:1rem; border:1px solid #bfd4d0; border-radius:12px; overflow:hidden; background:#f4f9f8; }
+.glossary-simple summary { display:flex; justify-content:space-between; align-items:center; min-height:52px; padding:.75rem 1rem; color:#123c46; font-weight:800; cursor:pointer; list-style:none; }
+.glossary-simple summary::-webkit-details-marker { display:none; }
+.glossary-simple summary::after { content:"+"; display:grid; place-items:center; width:1.75rem; height:1.75rem; border-radius:50%; color:#fff; background:#1d6971; font-size:1.2rem; }
+.glossary-simple[open] summary::after { content:"−"; }
+.glossary-simple[open] summary { border-bottom:1px solid #bfd4d0; }
+.glossary-simple div { padding:1rem; background:#fffdf8; }
+.glossary-simple div p:last-child { color:#173f49; font-size:1.05rem; line-height:1.6; }
 .source-card h2 { font-size: 1.35rem; }
 .source-card a { font-weight: 800; overflow-wrap: anywhere; }
 .verified { display: inline-block; margin-top: .6rem; color: var(--muted); font-size: .84rem; }

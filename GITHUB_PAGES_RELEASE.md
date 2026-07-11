@@ -31,4 +31,4 @@ The course is a static website. It needs no paid server, runtime API, database, 
 
 ## Updating later
 
-Upload the changed files and commit them. The app uses versioned assets and a service worker; this release is version `v23`. For a later release, increase the version in `index.html` and `service-worker.js` so phones do not keep an older cached copy.
+Upload the changed files and commit them. The app uses versioned assets and a service worker; this release is version `v26`. For a later release, increase the version in `index.html` and `service-worker.js` so phones do not keep an older cached copy.
